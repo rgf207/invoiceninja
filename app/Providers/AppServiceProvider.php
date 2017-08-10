@@ -11,6 +11,7 @@ use Utils;
 use Validator;
 use Queue;
 use Illuminate\Queue\Events\JobProcessing;
+Use App;
 
 /**
  * Class AppServiceProvider.
@@ -225,7 +226,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->removeMiddleware('Illuminate\Http\FrameGuard');
+        App::forgetMiddleware('Illuminate\Http\FrameGuard');
 
         $this->app->bind(
             'Illuminate\Contracts\Auth\Registrar',
