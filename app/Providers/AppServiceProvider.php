@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Form;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 use Request;
 use URL;
@@ -11,6 +10,7 @@ use Utils;
 use Validator;
 use Queue;
 use Illuminate\Queue\Events\JobProcessing;
+use App;
 
 /**
  * Class AppServiceProvider.
@@ -225,6 +225,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        App::forgetMiddleware('Illuminate\Http\Middleware\Frameguard');
         $this->app->bind(
             'Illuminate\Contracts\Auth\Registrar',
             'App\Services\Registrar'
