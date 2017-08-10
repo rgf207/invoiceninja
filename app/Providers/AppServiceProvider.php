@@ -225,7 +225,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $thiss->app->forgetMiddleware('Illuminate\Http\Middleware\FrameGuard');
+        $this->app->forgetMiddleware('Illuminate\Http\Middleware\FrameGuard');
 
         $this->app->bind(
             'Illuminate\Contracts\Auth\Registrar',
