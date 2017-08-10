@@ -11,7 +11,6 @@ use Utils;
 use Validator;
 use Queue;
 use Illuminate\Queue\Events\JobProcessing;
-Use App;
 
 /**
  * Class AppServiceProvider.
